@@ -1,0 +1,31 @@
+name: "CHD sign"
+
+on: 
+  schedule:
+    - cron: "0 0 * * *" # scheduled at 06:00 (UTC+8) everyday
+  workflow_dispatch:
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up python
+        uses: actions/set-up-python@v3
+        with:
+          python-version: 3.8
+
+      - name: Random sleep
+        if: github.event_name == 'schedule'
+        run: sleep $(shuf -i 10-300 -n 1)
+
+      - name: Run sign
+        env:
+          COOKIE: ${{ secrets.COOKIE }}
+        run: |
+          python -m pip install --upgrade pip
