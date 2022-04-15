@@ -21,6 +21,8 @@ class _Config:
     INFO_URL = 'https://cdjk.chd.edu.cn/healthPunch/project/jkdk/get?'
     LOC_URL = 'https://cdjk.chd.edu.cn/GetAddress/Ip/getAddressByLocation?'
     SIGN_URL = 'https://cdjk.chd.edu.cn/healthPunch/project/jkdk/add'
+    HOST_URL = 'cdjk.chd.edu.cn'
+    ORIGIN_URL = 'https://cdjk.chd.edu.cn'
     REFERER_URL = 'https://cdjk.chd.edu.cn/'
     USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36'
     
@@ -80,3 +82,14 @@ else:
     CONFIG = ProductionConfig()
 
 log.basicConfig(level=CONFIG.LOG_LEVEL)
+
+
+MESSAGE_TEMPLATE = '''
+    {today:#^28}
+    🔅[{insitute}]{name}
+    打卡位置: {position}
+    打卡时间: {time}
+    打卡结果: {status}
+    {end:#^28}'''
+
+CONFIG.MESSAGE_TEMPLATE = MESSAGE_TEMPLATE
