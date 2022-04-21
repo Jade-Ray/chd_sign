@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  chd-health-sign:
+     image: jaderay/chd-health-sign
+     environment:
+       COOKIE: '上一步复制的COOKIE'
