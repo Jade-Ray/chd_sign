@@ -18,8 +18,9 @@ log = logger = logging
 
 
 class _Config:
-    INFO_URL = 'https://cdjk.chd.edu.cn/healthPunch/project/jkdk/get?'
-    LOC_URL = 'https://cdjk.chd.edu.cn/GetAddress/Ip/getAddressByLocation?'
+    LOGIN_URL = 'https://ids.chd.edu.cn/authserver/login?service=http://cdjk.chd.edu.cn/healthPunch/index/login'
+    INFO_URL = 'https://cdjk.chd.edu.cn/healthPunch/project/jkdk/get'
+    LOC_URL = 'https://cdjk.chd.edu.cn/GetAddress/Ip/getAddressByLocation'
     SIGN_URL = 'https://cdjk.chd.edu.cn/healthPunch/project/jkdk/add'
     HOST_URL = 'cdjk.chd.edu.cn'
     ORIGIN_URL = 'https://cdjk.chd.edu.cn'

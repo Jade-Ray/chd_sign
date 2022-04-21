@@ -7,13 +7,13 @@ CHD sign 可以自动化打卡CHD的每日健康打卡
 - [x] **自动签到**  程序会在每天早上自动执行签到流程，也可以随时通过部署教程的`步骤4`手动触发，具体时间参照[此处](.github/workflows/main.yml)
 - [x] **支持同步**  自动同步上游仓库，默认关闭
 - [x] **支持订阅**  可选多种订阅方式，通过配置不同参数开启，每天将签到结果推送给订阅用户
-- [x] **支持多账号**  不同账号的`token`值之间用`#`分隔，如：`token#token#token`
+- [x] **支持多账号**  不同账号的`cookie`值之间用`#`分隔，如：`cookie#cookie#cookie`
 
 ## 📐部署
 
 1. Fork 仓库
-2. 获取 token
-3. 添加 token 至 Secrets
+2. 获取 cookie
+3. 添加 cookie 至 Secrets
 4. 启用 Actions
 
 <details>
@@ -21,23 +21,29 @@ CHD sign 可以自动化打卡CHD的每日健康打卡
 
 ### 1. Fork 仓库
 
-- 项目地址：[github/genshin-impact-helper](https://github.com/y1ndan/genshin-impact-helper)
+- 项目地址：[github/chd_sign](https://github.com/Jade-Ray/chd_sign)
 - 点击右上角`Fork`到自己的账号下
 - 将仓库默认分支设置为 master 分支
 
-### 2. 获取 token
+### 2. 获取 cookie
 浏览器打开 https://cdjk.chd.edu.cn 并登录账号
-在网址的param中可以看到`token=....`，复制等号后的内容
 
-### 3. 添加 token 至 Secrets
+#### 2.1 方法一
+
+- 按`F12`，打开`开发者工具`，找到`Network`并点击
+- 按`F5`刷新页面，按下图复制`Cookie`
+
+![cookie](img/get_cookie.png)
+
+### 3. 添加 cookie 至 Secrets
 
 - 回到项目页面，依次点击`Settings`-->`Secrets`-->`New secret`
 
-- 建立名为`TOKEN`的 secret，值为`步骤2`中复制的`token`内容，最后点击`Add secret`
+- 建立名为`COOKIE`的 secret，值为`步骤2`中复制的`cookie`内容，最后点击`Add secret`
 
-- secret名字必须为`TOKEN`！
-- secret名字必须为`TOKEN`！
-- secret名字必须为`TOKEN`！
+- secret名字必须为`COOKIE`！
+- secret名字必须为`COOKIE`！
+- secret名字必须为`COOKIE`！
 
 - （可选项）建立名为`LOG`、`LAT`、`ADDR`的 secret，可以自定义定位的经纬度和详细地址，默认为学校的地址
 
@@ -131,6 +137,6 @@ CHD sign 可以自动化打卡CHD的每日健康打卡
 
 使用 CHD Health Sign 即表明，您知情并同意：
 
-- 此代码通过模拟浏览器使用 token 登录CHD健康打卡网站，发送接收并添加定位的表单来实现健康打卡。功能通过网站抓取的 API 实现，可能存在 API 更改等风险
-- 用户之 token 被储存于 Github 服务器，只供本项目使用。若 Github 服务器被攻破，则您的 token 有遭到泄露的风险。除此之外，开发者无权获取您的 token；即使是用户，一旦创建完成`Secrets`，也无法再次从中查看 token
+- 此代码通过模拟浏览器使用 cookie 登录CHD健康打卡网站，发送接收并添加定位的表单来实现健康打卡。功能通过网站抓取的 API 实现，可能存在 API 更改等风险
+- 用户之 cookie 被储存于 Github 服务器，只供本项目使用。若 Github 服务器被攻破，则您的 cookie 有遭到泄露的风险。除此之外，开发者无权获取您的 cookie；即使是用户，一旦创建完成`Secrets`，也无法再次从中查看 cookie
 - CHD Health Sign 不会对您的任何损失负责，包括但不限于发送异常地址、频繁打卡等行为导致的辅导员办公室一日游
