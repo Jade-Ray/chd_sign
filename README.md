@@ -1,6 +1,6 @@
 ## 🔱简介
 
-CHD sign 可以自动化打卡CHD的每日健康打卡
+CHD sign 可以自动化打卡CHD的每日健康打卡, 代码框架借鉴[github/genshin-impact-helper](https://github.com/y1ndan/genshin-impact-helper)
 
 ## 💡特性
 
