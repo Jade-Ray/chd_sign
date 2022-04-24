@@ -94,7 +94,7 @@ class Sign(Base):
             if response.status_code != 200:
                 raise Exception(f'Can not login, with {response.status_code} status code')
             token_param = response.url.split('?')[-1]
-            assert 'token' in token_param
+            assert 'token' in token_param, '无效或过时Cookie, 请检查Cookie!'
             self.token = token_param.split('=')[-1]
         except Exception as e:
             raise Exception(e)

@@ -26,12 +26,12 @@ CHD sign 可以自动化打卡CHD的每日健康打卡, 代码框架借鉴[githu
 - 将仓库默认分支设置为 master 分支
 
 ### 2. 获取 cookie
-浏览器打开 https://cdjk.chd.edu.cn 并登录账号
+浏览器打开 https://cdjk.chd.edu.cn 并登录账号，勾选七日免登录
 
 #### 2.1 方法一
 
 - 按`F12`，打开`开发者工具`，找到`Network`并点击
-- 按`F5`刷新页面，按下图复制`Cookie`
+- 按`F5`刷新页面，按下图复制`Cookie`，获得`CASTGC=...`的cookie即可
 
 ![cookie](img/get_cookie.png)
 
